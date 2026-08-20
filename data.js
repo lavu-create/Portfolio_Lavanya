@@ -8,7 +8,7 @@ const DATA = {
     title: "Lavanya | Computer Engineering Student & Developer",
     description:
       "Portfolio of Lavanya — final-year B.Tech. Computer Engineering student at TIET with project experience in full-stack web development, REST APIs, and recommendation systems.",
-    url: "https://lavu-create.github.io/Portfolio_Lavanya/", // Update with actual deployed URL
+    url: "https://github.com/lavu-create/Portfolio_Lavanya",
     ogImage: "/public/assets/og-image.png", // Update if you add an OG image
   },
 
