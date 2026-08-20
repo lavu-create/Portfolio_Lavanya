@@ -1,5 +1,7 @@
 # Lavanya — Portfolio Website
 
+**Live Demo:** [https://lavu-create.github.io/Portfolio_Lavanya/](https://lavu-create.github.io/Portfolio_Lavanya/)
+
 A personal developer portfolio built with plain **HTML5, CSS3, and Vanilla JavaScript**.
 No frameworks, no build step, no dependencies. Deploy anywhere for free.
 
