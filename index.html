@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <title>Lavanya | Computer Engineering Student & Developer</title>
-  <meta name="description" content="Portfolio of Lavanya — final-year B.Tech. Computer Engineering student at TIET with project experience in full-stack web development, REST APIs, and recommendation systems." />
+  <title>Lavanya | Computer Engineering Student | Software Development &amp; Data Science</title>
+  <meta name="description" content="Portfolio of Lavanya — final-year B.Tech. Computer Engineering student at TIET specializing in software development, data science, and AI/ML systems." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://lavu-create.github.io" />
+  <link rel="canonical" href="https://lavu-create.github.io/Portfolio_Lavanya/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Lavanya | Computer Engineering Student & Developer" />
-  <meta property="og:description" content="Final-year B.Tech. Computer Engineering student at TIET with project experience in full-stack web development, REST APIs, and recommendation systems." />
-  <meta property="og:url" content="https://lavu-create.github.io" />
+  <meta property="og:title" content="Lavanya | Computer Engineering Student | Software Development &amp; Data Science" />
+  <meta property="og:description" content="Portfolio of Lavanya — final-year B.Tech. Computer Engineering student at TIET specializing in software development, data science, and AI/ML systems." />
+  <meta property="og:url" content="https://lavu-create.github.io/Portfolio_Lavanya/" />
+  <meta property="og:image" content="public/assets/clario-screenshot.png" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -38,18 +39,18 @@
       Lavanya<span>.</span>
     </a>
 
-    <!-- Desktop links -->
+    <!-- Desktop links (Recruiter hierarchy order) -->
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#achievements">Achievements</a>
+      <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
+      <a href="#achievements">Achievements</a>
       <a href="#extracurricular">Extracurricular</a>
       <a href="#contact">Contact</a>
       <a href="public/assets/resume.pdf" target="_blank" rel="noopener noreferrer"
-         class="nav-resume" aria-label="Open resume in new tab">
+         class="nav-resume" aria-label="Open resume PDF in new tab">
         <!-- download icon -->
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
@@ -76,14 +77,21 @@
 <!-- Mobile nav drawer -->
 <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation" role="dialog">
   <a href="#about">About</a>
-  <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
-  <a href="#achievements">Achievements</a>
+  <a href="#skills">Skills</a>
   <a href="#experience">Experience</a>
   <a href="#education">Education</a>
+  <a href="#achievements">Achievements</a>
   <a href="#extracurricular">Extracurricular</a>
   <a href="#contact">Contact</a>
   <a href="public/assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-resume">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+         aria-hidden="true">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
     View Resume
   </a>
 </nav>
@@ -97,17 +105,17 @@
   <div class="container">
     <div class="hero-inner">
 
-      <div class="hero-eyebrow" aria-hidden="true">Available for opportunities</div>
+      <div class="hero-eyebrow" aria-hidden="true">Available for Software &amp; Data Roles</div>
 
       <h1 class="hero-name" id="hero-heading">Lavanya</h1>
 
-      <p class="hero-tagline" id="hero-tagline" aria-label="Computer Engineering Student at TIET">
+      <p class="hero-tagline" id="hero-tagline" aria-label="Computer Engineering Student | Software Development | Data Science &amp; AI">
         <!-- Filled by JS typed effect -->
       </p>
 
       <p class="hero-oneliner">
-        Final-year B.Tech. student building web applications and recommendation systems.
-        Seeking entry-level software development roles.
+        Final-year Computer Engineering student at TIET building production-ready web applications,
+        recommendation systems, and data-driven software.
       </p>
 
       <div class="hero-cta">
@@ -119,6 +127,17 @@
             <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
           </svg>
           View Projects
+        </a>
+
+        <a href="public/assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Resume
         </a>
 
         <a href="#contact" class="btn btn-secondary">
@@ -156,30 +175,40 @@
   <div class="container">
     <div class="section__header reveal">
       <div class="section__label">About</div>
-      <h2 class="section__title" id="about-heading">Who I am</h2>
+      <h2 class="section__title" id="about-heading">Background &amp; Focus</h2>
     </div>
 
     <div class="about-grid">
-      <p class="about-text reveal" id="about-text">
-        <!-- Filled by JS from data.js -->
-      </p>
+      <div class="about-main reveal">
+        <p class="about-text" id="about-text">
+          <!-- Filled by JS from data.js -->
+        </p>
+
+        <!-- Languages -->
+        <div class="about-languages">
+          <span class="about-languages-title">Languages:</span>
+          <div class="language-tags" id="about-languages">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </div>
 
       <div class="about-stats reveal-group">
         <div class="stat-card">
           <div class="stat-value">8.07</div>
-          <div class="stat-label">CGPA at TIET</div>
+          <div class="stat-label">CGPA at TIET (Computer Eng.)</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">3</div>
-          <div class="stat-label">Hackathons participated</div>
+          <div class="stat-value">GATE '26</div>
+          <div class="stat-label">Qualified in Data Science &amp; AI</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">2</div>
-          <div class="stat-label">National-level advancements</div>
+          <div class="stat-value">2.98M+</div>
+          <div class="stat-label">Amazon Interactions Processed</div>
         </div>
         <div class="stat-card">
           <div class="stat-value">9/9</div>
-          <div class="stat-label">Integration tests passing (Clario)</div>
+          <div class="stat-label">Clario Integration Tests Passing</div>
         </div>
       </div>
     </div>
@@ -188,56 +217,53 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
-     SKILLS
-══════════════════════════════════════════════════════════ -->
-<section id="skills" class="section" aria-labelledby="skills-heading">
-  <div class="container">
-    <div class="section__header reveal">
-      <div class="section__label">Skills</div>
-      <h2 class="section__title" id="skills-heading">Technical Toolkit</h2>
-    </div>
-
-    <div class="skills-grid reveal-group" id="skills-grid">
-      <!-- Filled by JS from data.js -->
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════════════════════
-     PROJECTS
+     FEATURED PROJECTS (Positioned right after About)
 ══════════════════════════════════════════════════════════ -->
 <section id="projects" class="section" aria-labelledby="projects-heading">
   <div class="container">
     <div class="section__header reveal">
-      <div class="section__label">Projects</div>
-      <h2 class="section__title" id="projects-heading">Selected Work</h2>
+      <div class="section__label">Featured Projects</div>
+      <h2 class="section__title" id="projects-heading">Selected Technical Work</h2>
     </div>
 
     <!-- ── PROJECT 1: CLARIO (Lead) ── -->
     <article class="project-card-lead reveal" aria-labelledby="clario-heading">
-      <span class="project-badge badge-lead" aria-label="Lead project">
-        <!-- star icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
-             fill="currentColor" aria-hidden="true">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
-        Lead Project
-      </span>
-      <img src="public/assets/clario-screenshot.png" alt="Clario dashboard screenshot" class="project-image" />
+      <div class="project-header-badges">
+        <span class="project-badge badge-lead" aria-label="Lead project">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          Lead Project
+        </span>
+        <span class="test-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          9/9 Jest/Supertest Tests Passing
+        </span>
+      </div>
+
+      <img src="public/assets/clario-screenshot.png" alt="Clario dashboard screenshot showing tasks and analytics" class="project-image" loading="lazy" />
 
       <div class="project-lead-grid">
         <div>
           <h3 class="project-title" id="clario-heading">Clario</h3>
           <p class="project-subtitle">Full-Stack Productivity &amp; Analytics Platform</p>
+
+          <div class="project-problem-box">
+            <strong>Problem Statement:</strong> Productivity tools frequently scatter tasks, schedules, and mood tracking across fragmented apps lacking unified visual analytics and secure API safeguards.
+          </div>
+
           <p class="project-desc">
-            A full-stack productivity SPA built with Vanilla JavaScript, Node.js, Express.js,
-            and MongoDB. Features task/event management, mood tracking, and productivity
-            analytics powered by Chart.js.
+            A full-stack productivity Single Page Application (SPA) built with Vanilla JavaScript, Node.js, Express.js,
+            and MongoDB. Integrates task/event management, daily mood tracking, and visual analytics powered by Chart.js.
           </p>
 
           <div class="tech-tags">
-            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">Vanilla JavaScript</span>
             <span class="tech-tag">Node.js</span>
             <span class="tech-tag">Express.js</span>
             <span class="tech-tag">MongoDB</span>
@@ -261,9 +287,7 @@
 
         <!-- Right column: highlights -->
         <div>
-          <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:16px;">
-            Technical Highlights
-          </h4>
+          <h4 class="section-subheading">Technical Highlights &amp; Architecture</h4>
           <div class="project-highlights" id="clario-highlights">
             <!-- Filled by JS -->
           </div>
@@ -274,35 +298,41 @@
 
     <!-- ── PROJECT 2: SHOPSENSE (Featured) ── -->
     <article class="project-card-featured reveal" aria-labelledby="shopsense-heading">
-      <span class="project-badge badge-featured" aria-label="Featured project">
-        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
-             fill="currentColor" aria-hidden="true">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
-        Featured
-      </span>
-      <img src="public/assets/shopsense-screenshot.png" alt="ShopSense dashboard screenshot" class="project-image" />
+      <div class="project-header-badges">
+        <span class="project-badge badge-featured" aria-label="Featured recommendation project">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
+               fill="currentColor" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          Featured ML System
+        </span>
+        <span class="test-badge badge-memory">
+          512 MB Memory Constrained
+        </span>
+      </div>
+
+      <img src="public/assets/shopsense-screenshot.png" alt="ShopSense recommendation dashboard screenshot" class="project-image" loading="lazy" />
 
       <h3 class="project-title" id="shopsense-heading">ShopSense</h3>
       <p class="project-subtitle">Multi-Tier E-Commerce Recommendation System</p>
+
+      <div class="project-problem-box">
+        <strong>Problem Statement:</strong> E-commerce catalogs face severe interaction sparsity and cold-start dilemmas, requiring multi-layered ranking strategies that balance popularity, user affinity, and content similarity under strict memory limits.
+      </div>
+
       <p class="project-desc">
-        A product recommendation system that processes 2.98M+ Amazon review interactions
-        using collaborative filtering, TF-IDF, and multiple recommendation models. Deployed
-        through FastAPI with memory-optimized routing.
+        A multi-tier recommendation system processing 2.98M+ Amazon review interactions using collaborative filtering,
+        TF-IDF, and hybrid pipelines. Deployed through FastAPI with memory-optimized routing engineered for a 512 MB hosting constraint.
       </p>
 
       <!-- Key Metrics -->
-      <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:4px;">
-        Key Metrics
-      </h4>
+      <h4 class="section-subheading">Verified Evaluation Metrics</h4>
       <div class="metrics-grid reveal-group" id="shopsense-metrics">
         <!-- Filled by JS -->
       </div>
 
       <!-- Models -->
-      <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:12px;">
-        Models Implemented
-      </h4>
+      <h4 class="section-subheading">Models &amp; Routing Strategy</h4>
       <div class="models-list" id="shopsense-models">
         <!-- Filled by JS -->
       </div>
@@ -328,39 +358,45 @@
     </article>
 
 
-    <!-- ── PROJECT 3: NEXORA (Supporting) ── -->
+    <!-- ── PROJECT 3: NEXORA (Supporting Prototype) ── -->
     <article class="project-card-supporting reveal" aria-labelledby="nexora-heading">
-      <span class="project-badge badge-supporting" aria-label="Hackathon project">
-        Hackathon Project
-      </span>
+      <div class="project-header-badges">
+        <span class="project-badge badge-supporting" aria-label="Hackathon project">
+          Hackathon Project
+        </span>
+        <span class="note-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          Prototype • AI-assisted development
+        </span>
+      </div>
 
-      <span class="note-badge">
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
-             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-             aria-hidden="true">
-          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-        AI-assisted development
-      </span>
-      
-      <img src="public/assets/nexora-screenshot.png" alt="Nexora dashboard screenshot" class="project-image" />
+      <img src="public/assets/nexora-screenshot.png" alt="Nexora ICU assistive communication prototype interface" class="project-image" loading="lazy" />
 
       <h3 class="project-title" id="nexora-heading">Nexora</h3>
       <p class="project-subtitle">Assistive Communication Platform Prototype</p>
+
+      <div class="project-problem-box">
+        <strong>Problem Statement:</strong> ICU-ventilated patients face immense barriers communicating basic physical comfort, symptoms, and emotional needs to healthcare providers and visiting families.
+      </div>
+
       <p class="project-desc">
-        A web-based prototype for an assistive communication platform designed for
-        ICU-ventilated patients. Features separate interfaces for patients, nurses, and
-        family members. Built during the Israel-India Hackathon 2025 using AI-assisted
-        development tools.
+        A web-based assistive communication platform prototype engineered for ICU-ventilated patients. Developed during the
+        Israel-India Hackathon 2025 using AI-assisted development tools, providing separate interfaces for patients, nurses,
+        and family members.
       </p>
 
+      <h4 class="section-subheading">Prototype Capabilities</h4>
       <div class="supporting-points" id="nexora-points">
         <!-- Filled by JS -->
       </div>
 
       <div class="tech-tags">
-        <span class="tech-tag">HTML</span>
-        <span class="tech-tag">CSS</span>
+        <span class="tech-tag">HTML5</span>
+        <span class="tech-tag">CSS3</span>
         <span class="tech-tag">JavaScript</span>
       </div>
 
@@ -380,17 +416,17 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
-     ACHIEVEMENTS
+     TECHNICAL SKILLS
 ══════════════════════════════════════════════════════════ -->
-<section id="achievements" class="section" aria-labelledby="achievements-heading">
+<section id="skills" class="section" aria-labelledby="skills-heading">
   <div class="container">
     <div class="section__header reveal">
-      <div class="section__label">Achievements</div>
-      <h2 class="section__title" id="achievements-heading">Hackathon Track Record</h2>
+      <div class="section__label">Skills</div>
+      <h2 class="section__title" id="skills-heading">Technical Toolkit &amp; Core Strengths</h2>
     </div>
 
-    <div class="achievements-grid reveal-group" id="achievements-grid">
-      <!-- Filled by JS -->
+    <div class="skills-grid reveal-group" id="skills-grid">
+      <!-- Filled by JS from data.js -->
     </div>
   </div>
 </section>
@@ -431,13 +467,31 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
+     ACHIEVEMENTS
+══════════════════════════════════════════════════════════ -->
+<section id="achievements" class="section" aria-labelledby="achievements-heading">
+  <div class="container">
+    <div class="section__header reveal">
+      <div class="section__label">Achievements</div>
+      <h2 class="section__title" id="achievements-heading">Qualifications &amp; Hackathons</h2>
+    </div>
+
+    <div class="achievements-grid reveal-group" id="achievements-grid">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
      EXTRACURRICULAR
 ══════════════════════════════════════════════════════════ -->
 <section id="extracurricular" class="section" aria-labelledby="extra-heading">
   <div class="container">
-    <h2 class="section__label" id="extra-heading" style="margin-bottom:20px;">
-      Extracurricular
-    </h2>
+    <div class="section__header reveal">
+      <div class="section__label">Extracurricular</div>
+      <h2 class="section__title" id="extra-heading">Activities &amp; Team Culture</h2>
+    </div>
 
     <div id="extra-card">
       <!-- Filled by JS -->
@@ -457,8 +511,8 @@
       <div class="reveal">
         <h2 class="contact-heading" id="contact-heading">Let's connect.</h2>
         <p class="contact-sub">
-          Seeking entry-level software development opportunities. Open to full-stack,
-          backend, or data-engineering roles.
+          Actively seeking entry-level opportunities across Software Development,
+          Data Science, and AI/ML. Feel free to reach out directly.
         </p>
 
         <div class="contact-items">
@@ -532,7 +586,7 @@
                 <circle cx="12" cy="10" r="3"/>
               </svg>
             </div>
-            <span>India</span>
+            <span>Patiala, Punjab, India</span>
           </div>
 
           <!-- Resume -->
@@ -576,7 +630,7 @@
             Send Message
           </button>
           <p class="form-note">
-            This form opens your email client with a pre-filled message.
+            Opens your email client with a pre-filled message addressed to lavanya36914@gmail.com.
           </p>
         </form>
       </div>
@@ -595,7 +649,7 @@
 
     <div>
       <div class="footer-brand">Lavanya<span>.</span></div>
-      <div class="footer-built">Built with HTML, CSS &amp; Vanilla JavaScript</div>
+      <div class="footer-built">Built with HTML5, CSS3 &amp; Vanilla JavaScript</div>
     </div>
 
     <div class="footer-links" aria-label="Footer links">
@@ -607,7 +661,7 @@
     </div>
 
     <div class="footer-copy">
-      <div>© 2025 Lavanya. All rights reserved.</div>
+      <div>&copy; 2026 Lavanya. All rights reserved.</div>
     </div>
 
   </div>

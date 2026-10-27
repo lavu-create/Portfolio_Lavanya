@@ -1,6 +1,6 @@
 /* ============================================================
    MAIN.JS — Portfolio interactions & dynamic rendering
-   Reads from DATA (data.js) to populate all sections.
+   Reads from DATA (data.js) to populate sections.
    No frameworks. No external dependencies.
    ============================================================ */
 
@@ -15,30 +15,32 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initHeroTyping();
   initScrollSpy();
-  // Render all dynamic content FIRST so their .reveal elements exist in the DOM
+  // Render dynamic content before observing intersection reveals
   renderAbout();
   renderSkills();
   renderClarioHighlights();
   renderShopSenseMetrics();
   renderShopSenseModels();
   renderNexoraPoints();
-  renderAchievements();
   renderExperience();
   renderEducation();
+  renderAchievements();
   renderExtracurricular();
   initCopyEmail();
   initContactForm();
-  // Observe AFTER all content is in the DOM
+  // Observe elements after all dynamic nodes are mounted
   initScrollReveal();
 });
 
 /* ─────────────────────────────────────────────────────────────
-   NAVBAR — scroll shadow + hamburger
+   NAVBAR — scroll shadow + accessible mobile drawer
 ──────────────────────────────────────────────────────────── */
 function initNavbar() {
   const navbar    = $('#navbar');
   const hamburger = $('#hamburger');
   const mobileNav = $('#nav-mobile');
+
+  if (!navbar) return;
 
   // Scroll shadow
   const onScroll = () => {
@@ -46,6 +48,8 @@ function initNavbar() {
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  if (!hamburger || !mobileNav) return;
 
   // Hamburger toggle
   hamburger.addEventListener('click', () => {
@@ -71,6 +75,16 @@ function initNavbar() {
       hamburger.setAttribute('aria-expanded', 'false');
     }
   });
+
+  // Close mobile nav on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.focus();
+    }
+  });
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -80,7 +94,7 @@ function initHeroTyping() {
   const el = $('#hero-tagline');
   if (!el) return;
 
-  // Respect reduced motion
+  // Respect reduced motion preference
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) {
     el.textContent = DATA.personal.tagline;
@@ -89,9 +103,9 @@ function initHeroTyping() {
 
   const phrases = [
     DATA.personal.tagline,
-    'Full-Stack Development',
-    'REST APIs & Backend',
-    'Data-Driven Systems',
+    'Software Development',
+    'Data Science & AI/ML',
+    'Full-Stack Web & REST APIs',
     DATA.personal.tagline,
   ];
 
@@ -99,7 +113,6 @@ function initHeroTyping() {
   let charIndex    = 0;
   let isDeleting   = false;
 
-  // Cursor
   const cursor = document.createElement('span');
   cursor.className = 'typed-cursor';
   cursor.setAttribute('aria-hidden', 'true');
@@ -117,11 +130,11 @@ function initHeroTyping() {
 
     el.appendChild(cursor);
 
-    let delay = isDeleting ? 40 : 70;
+    let delay = isDeleting ? 35 : 65;
 
     if (!isDeleting && charIndex === current.length) {
-      // Pause at end
-      if (phraseIndex === phrases.length - 1) return; // final phrase — stop
+      // If we completed the final return to primary tagline, hold steadily
+      if (phraseIndex === phrases.length - 1) return;
       delay = 1800;
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
@@ -153,7 +166,7 @@ function initScrollReveal() {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
   $$('.reveal, .reveal-group').forEach(el => io.observe(el));
 }
@@ -175,21 +188,28 @@ function initScrollSpy() {
         });
       }
     });
-  }, { rootMargin: '-65px 0px -50% 0px' });
+  }, { rootMargin: '-70px 0px -50% 0px' });
 
   sections.forEach(s => io.observe(s));
 }
 
 /* ─────────────────────────────────────────────────────────────
-   ABOUT — fill from data
+   ABOUT — content & languages
 ──────────────────────────────────────────────────────────── */
 function renderAbout() {
   const el = $('#about-text');
   if (el) el.textContent = DATA.about;
+
+  const langEl = $('#about-languages');
+  if (langEl && Array.isArray(DATA.languages)) {
+    langEl.innerHTML = DATA.languages
+      .map(lang => `<span class="language-tag">${escHtml(lang)}</span>`)
+      .join('');
+  }
 }
 
 /* ─────────────────────────────────────────────────────────────
-   SKILLS — render categories
+   SKILLS — grouped categories
 ──────────────────────────────────────────────────────────── */
 function renderSkills() {
   const grid = $('#skills-grid');
@@ -284,15 +304,18 @@ function renderAchievements() {
 
   grid.innerHTML = DATA.achievements.map(a => `
     <div class="achievement-card">
-      <svg class="achievement-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-           fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-           aria-hidden="true">
-        <circle cx="12" cy="8" r="6"/>
-        <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
-      </svg>
+      <div class="achievement-top">
+        <svg class="achievement-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <circle cx="12" cy="8" r="6"/>
+          <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+        </svg>
+        ${a.badge ? `<span class="achievement-badge">${escHtml(a.badge)}</span>` : ''}
+      </div>
       <h3 class="achievement-title">${escHtml(a.title)}</h3>
       <p class="achievement-desc">${escHtml(a.description)}</p>
-      ${a.project ? `<p class="achievement-project">Project: <span>${escHtml(a.project)}</span></p>` : ''}
+      ${a.project ? `<p class="achievement-project">Associated Project: <span>${escHtml(a.project)}</span></p>` : ''}
     </div>
   `).join('');
 }
@@ -329,11 +352,11 @@ function renderEducation() {
   if (!el) return;
 
   el.innerHTML = DATA.education.map(edu => `
-    <div class="education-card reveal" style="margin-bottom: 20px;">
+    <div class="education-card reveal">
       <div>
         <h3 class="edu-institution">${escHtml(edu.institution)}</h3>
         <p class="edu-degree">${escHtml(edu.degree)}</p>
-        ${edu.details ? `<p class="edu-location">${escHtml(edu.details)}</p>` : ''}
+        ${edu.details ? `<p class="edu-details">${escHtml(edu.details)}</p>` : ''}
         <p class="edu-location">${escHtml(edu.location)}</p>
       </div>
       <div class="edu-right">
@@ -356,7 +379,7 @@ function renderExtracurricular() {
   el.innerHTML = `
     <div class="extra-card reveal">
       <svg class="extra-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-           fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+           fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
            aria-hidden="true">
         <path d="M9 18V5l12-2v13"/>
         <circle cx="6" cy="18" r="3"/>
@@ -382,7 +405,13 @@ function initCopyEmail() {
     try {
       await navigator.clipboard.writeText(DATA.personal.email);
       btn.classList.add('copied');
-      btn.textContent = 'Copied!';
+      btn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Copied!`;
       setTimeout(() => {
         btn.classList.remove('copied');
         btn.innerHTML = `
@@ -395,8 +424,7 @@ function initCopyEmail() {
           Copy`;
       }, 2000);
     } catch {
-      // Fallback: select text
-      window.getSelection()?.selectAllChildren(btn.previousElementSibling);
+      window.location.href = `mailto:${DATA.personal.email}`;
     }
   });
 }
@@ -411,14 +439,21 @@ function initContactForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name    = form.querySelector('#cf-name').value.trim();
-    const email   = form.querySelector('#cf-email').value.trim();
-    const message = form.querySelector('#cf-message').value.trim();
+    const nameInput    = form.querySelector('#cf-name');
+    const emailInput   = form.querySelector('#cf-email');
+    const messageInput = form.querySelector('#cf-message');
 
-    if (!name || !email || !message) return;
+    const name    = nameInput ? nameInput.value.trim() : '';
+    const email   = emailInput ? emailInput.value.trim() : '';
+    const message = messageInput ? messageInput.value.trim() : '';
 
-    const subject  = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body     = encodeURIComponent(`Hi Lavanya,\n\n${message}\n\nFrom: ${name}\nEmail: ${email}`);
+    if (!name || !email || !message) {
+      alert('Please fill out all fields before sending.');
+      return;
+    }
+
+    const subject  = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+    const body     = encodeURIComponent(`Hello Lavanya,\n\n${message}\n\nFrom: ${name}\nContact Email: ${email}`);
     const mailto   = `mailto:${DATA.personal.email}?subject=${subject}&body=${body}`;
 
     window.location.href = mailto;
