@@ -1,7 +1,6 @@
 # Lavanya — Portfolio Website
 
 **Live Website:** [https://lavu-create.github.io/Portfolio_Lavanya/](https://lavu-create.github.io/Portfolio_Lavanya/)
-**GitHub Repository:** [https://github.com/lavu-create/Portfolio_Lavanya](https://github.com/lavu-create/Portfolio_Lavanya)
 
 A modern, responsive personal developer portfolio engineered with **HTML5, CSS3, and Vanilla JavaScript**. Designed with zero build tooling, zero runtime dependencies, high contrast, and accessible UI interactions.
 
